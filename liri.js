@@ -84,13 +84,14 @@ var doIt = function() {
       dataArr = data.split(",");
       command = dataArr[0];
       search = dataArr[1];
+
       spots();
     }
   });
 };
 
 var spots = function() {
-  if (process.argv.length < 4) {
+  if (search === undefined) {
     search = "The Sign Ace of Base";
   }
   spotify.search({ type: "track", query: search }, function(err, data) {
